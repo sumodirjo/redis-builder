@@ -15,4 +15,3 @@ script:
   - mv jemalloc redis/deps/
   - cd redis
   - time make
-  - time make test
