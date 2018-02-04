@@ -10,7 +10,7 @@ install:
 
 script:
   - git clone --branch 4.0.8 https://github.com/antirez/redis.git
-  - git clone --branch 5.0.1 https://github.com/jemalloc/jemalloc.git
+  - git clone --branch 4.5.0 https://github.com/jemalloc/jemalloc.git
   - mv redis/deps/jemalloc redis/deps/jemalloc-bak
   - echo "Now in:" `pwd`
   - cd jemalloc
