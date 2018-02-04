@@ -12,6 +12,9 @@ script:
   - git clone --branch 4.0.8 https://github.com/antirez/redis.git
   - git clone --branch 5.0.1 https://github.com/jemalloc/jemalloc.git
   - rm -rf redis/deps/jemalloc
+  - cd jemalloc
+  - ./autoconf.sh
+  - cd ..
   - mv jemalloc redis/deps/
   - cd redis
   - time make
