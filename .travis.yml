@@ -1,0 +1,15 @@
+---
+language: python
+python: "2.7"
+
+dist: trusty
+sudo: required
+
+install:
+  - sudo apt-get install build-essential
+
+script:
+  - git clone --branch 4.0.8 https://github.com/antirez/redis.git
+  - cd redis
+  - make
+  - make test
