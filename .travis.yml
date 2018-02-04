@@ -6,10 +6,13 @@ dist: trusty
 sudo: required
 
 install:
-  - sudo apt-get install build-essential
+  - sudo apt-get install -y build-essential
 
 script:
   - git clone --branch 4.0.8 https://github.com/antirez/redis.git
+  - git clone --branch 5.0.1 https://github.com/jemalloc/jemalloc.git
+  - rm -rf redis/deps/jemalloc
+  - mv jemalloc redis/deps/
   - cd redis
-  - make
-  - make test
+  - time make
+  - time make test
